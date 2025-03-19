@@ -1,0 +1,6 @@
+venv/
+mlruns/
+logs/
+hotel_reservations_prediction.egg-info/
+mlartifacts/
+mlruns.db
