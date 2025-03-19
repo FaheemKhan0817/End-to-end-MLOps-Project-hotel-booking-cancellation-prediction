@@ -1,0 +1,136 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Container styling */
+.container {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 900px; /* Slightly wider for grid layout */
+}
+
+/* Heading styling */
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Form grid styling */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3-column layout */
+    gap: 20px; /* Space between inputs */
+}
+
+/* Form group styling */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+label {
+    font-size: 0.9rem;
+    color: #34495e;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+/* Input and select field styling */
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #dfe6e9; /* Added border */
+    border-radius: 8px;
+    background-color: #f9fbfc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus,
+select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+    outline: none;
+}
+
+/* Button styling */
+button {
+    grid-column: span 3; /* Span all 3 columns */
+    padding: 14px;
+    background: linear-gradient(90deg, #3498db, #2980b9); /* Gradient button */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #2980b9, #2471a3);
+    transform: translateY(-2px);
+}
+
+/* Result section styling */
+.result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #ecf0f1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.result p.cancel {
+    color: #e74c3c; /* Red for cancellation */
+    font-weight: bold;
+}
+
+.result p.not-cancel {
+    color: #2ecc71; /* Green for no cancellation */
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+    button {
+        grid-column: span 2; /* Span 2 columns */
+    }
+}
+
+@media (max-width: 480px) {
+    .form-grid {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+    button {
+        grid-column: span 1; /* Span 1 column */
+    }
+}
