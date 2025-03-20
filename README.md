@@ -123,7 +123,7 @@ Visit [http://localhost:8080](http://localhost:8080) to test the app.
 - **Stylish Design**: Gradient backgrounds, borders, and hover effects.  
 - **Error Feedback**: Clear messages for invalid inputs.  
 
-🖼 **UI Screenshot** *(Add your actual screenshot here, e.g., `./static/main.png`)*
+🖼 **UI Screenshot** *(`./static/main.png`)*
 
 ---
 
@@ -154,7 +154,7 @@ View results in **MLflow** at [`http://localhost:5000`](http://localhost:5000).
 
 Deployed on **Google Cloud Run**:
 
-- **URL**: *(Insert your Cloud Run URL here, e.g., `https://end-to-end-mlops-project-hotel-booking.onrender.com/`)*  
+- **URL**: *(`https://end-to-end-mlops-project-hotel-booking.onrender.com/`)*  
 - **Access**: Public (`--allow-unauthenticated`).  
 
 ---
