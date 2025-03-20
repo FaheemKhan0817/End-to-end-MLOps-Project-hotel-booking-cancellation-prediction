@@ -1,30 +1,38 @@
-Hotel Reservation Prediction 🏨✨
+# Hotel Reservation Prediction 🏨✨
 
-MLOps Project
+## MLOps Project
 
-Python Flask
+### Python Flask | Docker | Google Cloud
 
-Docker Google Cloud
+Welcome to **Hotel Reservation Prediction**, an **MLOps-driven machine learning project** designed to predict hotel booking cancellations with precision and style! 🚀  
+This end-to-end solution integrates **data science, web development, and DevOps**, offering a **scalable, user-friendly application**.
 
-Welcome to Hotel Reservation Prediction, an MLOps-driven machine learning project designed to predict hotel booking cancellations with precision and style! This end-to-end solution combines data science, web development, and DevOps to deliver a scalable, user-friendly application. 🚀
-🎯 Project Overview
+---
 
-This project predicts whether a hotel reservation will be canceled based on booking details like lead time, average room price, and special requests. It’s perfect for hotel managers looking to optimize operations and reduce revenue loss from cancellations.
+## 🎯 Project Overview
 
-    Input: Booking features (e.g., lead time, arrival date, meal plan).
-    Output: Prediction (0 = Cancel, 1 = Not Cancel).
-    Tech Stack: Python, Flask, LightGBM, Docker, Jenkins, Google Cloud Run, MLflow.
+This project predicts whether a **hotel reservation will be canceled** based on booking details like **lead time, average room price, and special requests**.  
+Ideal for **hotel managers**, helping them **optimize operations** and **reduce revenue loss** from cancellations.
 
-🌟 Features
+- **Input**: Booking features (e.g., lead time, arrival date, meal plan).
+- **Output**: Prediction (0 = Canceled, 1 = Not Canceled).
+- **Tech Stack**: Python, Flask, LightGBM, Docker, Jenkins, Google Cloud Run, MLflow.
 
-    Sleek Web UI: A modern, grid-based interface for easy input and predictions.
-    Automated Workflow: CI/CD pipeline with Jenkins for training and deployment.
-    Scalable Deployment: Hosted on Google Cloud Run via Docker containers.
-    Experiment Tracking: MLflow logs model parameters, metrics, and artifacts.
-    Robust Preprocessing: Handles skewness, encodes categories, and balances data with SMOTE.
+---
 
-🛠️ Project Structure
-text
+## 🌟 Features
+
+✅ **Sleek Web UI** - A modern, grid-based interface for easy input and predictions.  
+✅ **Automated Workflow** - CI/CD pipeline with **Jenkins** for training and deployment.  
+✅ **Scalable Deployment** - Hosted on **Google Cloud Run** via **Docker containers**.  
+✅ **Experiment Tracking** - MLflow logs **model parameters, metrics, and artifacts**.  
+✅ **Robust Preprocessing** - Handles **skewness, encodes categories, and balances data** with SMOTE.  
+
+---
+
+## 🛠️ Project Structure
+
+```
 Hotel-Reservation-Prediction/
 ├── config/                   # Configuration files
 │   ├── paths_config.py       # File paths
@@ -41,112 +49,142 @@ Hotel-Reservation-Prediction/
 ├── templates/                # Flask templates
 │   └── index.html            # Web UI template
 ├── app.py                    # Flask web application
-├── training_pipeline.py      # Orchestrates the ML pipeline
-├── custom_jenkins_docker     # Jenkins pipeline configuration
-├── Dockerfile                # Docker configuration (assumed)
+├── pipeline/
+    └──training_pipeline.py   # Orchestrates the ML pipeline
+├── custom_jenkins/
+│   ├── docker/               # Jenkins pipeline configuration
+├── Dockerfile                # Docker configuration
 └── README.md                 # This file! 👋
-🚀 Getting Started
-Prerequisites
+```
 
-    Python 3.9+
-    Docker
-    Jenkins (with Docker support)
-    Google Cloud SDK
-    MySQL database
-    MLflow server (http://localhost:5000)
+---
 
-Installation
+## 🚀 Getting Started
 
-    Clone the Repository
-    bash
+### Prerequisites
 
-git clone https://github.com/data-guru0/MLOPS-COURSE-PROJECT-1.git
-cd MLOPS-COURSE-PROJECT-1
-Set Up Virtual Environment
-bash
+Ensure you have the following installed:
+
+- Python **3.9+**
+- Docker
+- Jenkins (with Docker support)
+- Google Cloud SDK
+- MySQL database
+- MLflow server (`http://localhost:5000`)
+
+### Installation
+
+#### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/FaheemKhan0817 End-to-end-MLOps-Project-hotel-booking-cancellation-prediction.git
+cd End-to-end-MLOps-Project-hotel-booking-cancellation-prediction
+```
+
+#### 2️⃣ Set Up Virtual Environment
+
+```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -e .
-Configure Environment
+source venv/bin/activate  # On Windows: venv\Scriptsctivate
+pip install -r requirements.txt
+```
 
-    Update config/paths_config.py with your file paths (e.g., TRAIN_FILE_PATH, MODEL_OUTPUT_PATH).
-    Set MySQL credentials in your config.yaml (assumed from data_ingestion.py).
-    Add Google Cloud credentials to Jenkins as gcp-key.
+#### 3️⃣ Configure Environment
 
-Run Locally
-bash
+- Update **config/paths_config.py** with correct file paths (e.g., `TRAIN_FILE_PATH`, `MODEL_OUTPUT_PATH`).
+- Set MySQL credentials in `config.yaml`.
+- Add **Google Cloud credentials** to Jenkins as `gcp-key`.
 
-    python app.py
-    Visit http://localhost:8080 to test the app.
+#### 4️⃣ Run Locally
 
-🏃‍♂️ How It Works
+```bash
+python app.py
+```
 
-    Data Ingestion: Pulls data from MySQL, splits it into train/test sets.
-    Preprocessing: Drops duplicates, encodes categories, handles skewness, balances data with SMOTE, and selects top features.
-    Training: Trains a LightGBM model with hyperparameter tuning, tracked via MLflow.
-    Deployment: Jenkins builds a Docker image, pushes it to GCR, and deploys to Cloud Run.
-    Prediction: Users enter booking details via the web UI to get real-time predictions.
+Visit [http://localhost:8080](http://localhost:8080) to test the app.
 
-🎨 Web Interface
+---
 
-The UI is designed for beauty and usability:
+## 🏃‍♂️ How It Works
 
-    Compact Grid: 3-column layout fits all inputs on one screen.
-    Stylish Design: Gradient backgrounds, borders, and hover effects.
-    Error Feedback: Clear messages for invalid inputs.
+1. **Data Ingestion**: Pulls data from MySQL, splits it into train/test sets.
+2. **Preprocessing**: Drops duplicates, encodes categories, handles skewness, balances data with **SMOTE**, and selects top features.
+3. **Training**: Trains a **LightGBM** model with **hyperparameter tuning**, tracked via MLflow.
+4. **Deployment**: Jenkins **builds a Docker image**, pushes it to GCR, and deploys to **Cloud Run**.
+5. **Prediction**: Users enter **booking details via the web UI** to get real-time predictions.
 
-UI Screenshot
+---
 
-(Add your actual screenshot here, e.g., ./static/ui-screenshot.png)
-⚙️ CI/CD Pipeline
+## 🎨 Web Interface
 
-The Jenkins pipeline automates everything:
+✨ **Sleek & User-Friendly UI** ✨
 
-    Clone: Fetches code from GitHub.
-    Setup: Installs dependencies in a virtual environment.
-    Build: Creates and pushes a Docker image to Google Container Registry.
-    Deploy: Deploys to Google Cloud Run (us-central1).
+- **Compact Grid**: 3-column layout for a smooth user experience.  
+- **Stylish Design**: Gradient backgrounds, borders, and hover effects.  
+- **Error Feedback**: Clear messages for invalid inputs.  
 
-Run it in Jenkins to see the magic happen! ✨
-📊 Model Performance
+🖼 **UI Screenshot** *(Add your actual screenshot here, e.g., `./static/main.png`)*
 
-    Algorithm: LightGBM with RandomizedSearchCV for tuning.
-    Metrics: Accuracy, Precision, Recall, F1-Score (logged to MLflow).
-    Features: Top 10 selected via RandomForest importance.
+---
 
-View results in MLflow at http://localhost:5000.
-🌐 Deployment
+## ⚙️ CI/CD Pipeline
 
-Deployed on Google Cloud Run:
+The **Jenkins pipeline** automates the workflow:
 
-    URL: (Insert your Cloud Run URL here, e.g., https://ml-project-abc123-uc.a.run.app).
-    Access: Public (--allow-unauthenticated).
+1️⃣ **Clone**: Fetches code from GitHub.  
+2️⃣ **Setup**: Installs dependencies in a virtual environment.  
+3️⃣ **Build**: Creates and pushes a Docker image to **Google Container Registry**.  
+4️⃣ **Deploy**: Deploys to **Google Cloud Run** (`us-central1`).  
 
-🤝 Contributing
+Run it in **Jenkins** to see the magic happen! ✨
+
+---
+
+## 📊 Model Performance
+
+- **Algorithm**: LightGBM with **RandomizedSearchCV** for tuning.  
+- **Metrics**: Accuracy, Precision, Recall, F1-Score (**logged in MLflow**).  
+- **Features**: **Top 10 selected** via RandomForest importance.  
+
+View results in **MLflow** at [`http://localhost:5000`](http://localhost:5000).
+
+---
+
+## 🌐 Deployment
+
+Deployed on **Google Cloud Run**:
+
+- **URL**: *(Insert your Cloud Run URL here, e.g., `https://end-to-end-mlops-project-hotel-booking.onrender.com/`)*  
+- **Access**: Public (`--allow-unauthenticated`).  
+
+---
+
+## 🤝 Contributing
 
 We’d love your help!
 
-    Fork the repo.
-    Create a branch: git checkout -b feature/cool-idea.
-    Commit changes: git commit -m "Add cool idea".
-    Push: git push origin feature/cool-idea.
-    Open a Pull Request.
+1. **Fork** the repo.  
+2. **Create a branch**: `git checkout -b feature/cool-idea`.  
+3. **Commit changes**: `git commit -m "Add cool idea"`.  
+4. **Push**: `git push origin feature/cool-idea`.  
+5. **Open a Pull Request**.  
 
-📧 Contact
+---
 
-Questions? Reach out!
+## 📧 Contact
 
-    Author: [Your Name]
-    GitHub: data-guru0
-    Email: your.email@example.com
+📌 **Author**: [Faheem Khan]  
+📌 **GitHub**: [FaheemKhan0817](https://github.com/FaheemKhan0817)  
+📌 **Email**: `faheemthakur23@gmail.com`  
 
-✨ Acknowledgments
+---
 
-    xAI for inspiring AI innovation.
-    LightGBM for fast, accurate predictions.
-    Flask for a lightweight web framework.
-    Google Cloud for scalable hosting.
+## ✨ Acknowledgments
+ 
+🔹 **LightGBM** for fast, accurate predictions.  
+🔹 **Flask** for a lightweight web framework.  
+🔹 **Google Cloud** for scalable hosting.  
 
-⭐ Star this repo if you like it! ⭐
+⭐ **Star this repo if you like it!** ⭐  
 
-Happy predicting! 🏨💡
+Happy predicting! 🏨💡  
